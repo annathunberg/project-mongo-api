@@ -1,13 +1,11 @@
 # Mongo API Project
 
-Replace this readme with your own information about your project. 
+First project working with a database. Modeled data in Mongodb using Mongoose. Used my own data from the previous weeks express api.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Features
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- The API has 2 routes.
+- The first endpoint returns an array of elements (all seasons and it's data) /seasons
+- The second endpoint returns a single element (a specific season and it's data) /season:season
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
