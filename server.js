@@ -24,7 +24,8 @@ const Seasons = mongoose.model("Seasons", {
   miss_congeniality: String,
 });
 
-// Resets the database. Previous data is deleted (deleteMany), then the new data is set with save() (in order to avoid duplicated data)
+// Resets the database. Previous data is deleted (deleteMany),
+// then the new data is set with save() (in order to avoid duplicated data)
 if (process.env.RESET_DB) {
   const seedDatabase = async () => {
     await Seasons.deleteMany();
@@ -46,7 +47,7 @@ app.use((req, res, next) => {
   }
 });
 
-////// ROUTES /////
+// ROUTES
 
 // home route sends an html file
 app.get("/", (req, res) => {
@@ -55,14 +56,14 @@ app.get("/", (req, res) => {
 
 // route with all seasons
 app.get("/seasons", (req, res) => {
-  res.json(data);
+  res.json(seasonsData);
 });
 
 // route specific season
 app.get("/seasons/:season", (req, res) => {
   const seasonId = Number(req.params.season);
 
-  const season = data.find((s) => s.season === seasonId);
+  const season = seasonsData.find((s) => s.season === seasonId);
 
   if (!season) {
     res.status(404).send("no season found with that id");
